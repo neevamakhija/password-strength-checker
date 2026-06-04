@@ -9,13 +9,13 @@ public class PasswordChecker {
         System.out.print("Enter your password: ");
         String password = sc.nextLine();
 
-        // 2. Flags — sab false se shuru
+        // 2. Flags — start with false
         boolean hasUpper   = false;
         boolean hasLower   = false;
         boolean hasDigit   = false;
         boolean hasSpecial = false;
 
-        // 3. Har character check karo
+        // 3. check every character
         for (int i = 0; i < password.length(); i++) {
             char c = password.charAt(i);
             if      (Character.isUpperCase(c)) hasUpper   = true;
@@ -35,7 +35,7 @@ public class PasswordChecker {
         if (hasDigit)   score++;
         if (hasSpecial) score++;
 
-        // 6. Strength decide karo
+        // 6. Strength decide 
         String strength;
         if      (score <= 1) strength = "WEAK";
         else if (score <= 3) strength = "MEDIUM";
